@@ -2,7 +2,7 @@
 	. = ..()
 	if(href_list["lookup_info"])
 		switch(href_list["lookup_info"])
-			if("genitals")
+			/*if("genitals")
 				var/list/line = list()
 				for(var/genital in list("penis", "testicles", "vagina", "breasts"))
 					if(!dna.species.mutant_bodyparts[genital])
@@ -17,7 +17,7 @@
 						continue
 					line += ORG.get_description_string(G)
 				if(length(line))
-					to_chat(usr, "<span class='notice'>[jointext(line, "\n")]</span>")
+					to_chat(usr, "<span class='notice'>[jointext(line, "\n")]</span>")*/
 			if("flavor_text")
 				if(length(dna.features["flavor_text"]))
 					var/datum/browser/popup = new(usr, "[name]'s flavor text", "[name]'s Flavor Text", 500, 200)
@@ -25,14 +25,14 @@
 					popup.open()
 					return
 
-			if("ooc_prefs")
+			/*if("ooc_prefs")
 				if(client)
 					var/str = "[src]'s OOC Notes : <br> <b>ERP :</b> [client.prefs.erp_pref] <b>| Non-Con :</b> [client.prefs.noncon_pref] <b>| Vore :</b> [client.prefs.vore_pref] <b>| Lewd-system: </b> [client.prefs.sextoys_pref]"
 					str += "<br>[html_encode(client.prefs.ooc_prefs)]"
 					var/datum/browser/popup = new(usr, "[name]'s ooc info", "[name]'s OOC Information", 500, 200)
 					popup.set_content(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", "[name]'s OOC information", replacetext(str, "\n", "<BR>")))
 					popup.open()
-					return
+					return*/
 
 			if("general_record")
 				if(client && usr.client.holder)
