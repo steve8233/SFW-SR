@@ -5799,7 +5799,7 @@
 /obj/effect/turf_decal/trimline/darkblue/line{
 	dir = 6
 	},
-/obj/machinery/vending/dorms,
+///obj/machinery/vending/dorms,
 /turf/open/floor/iron/white,
 /area/centcom/interlink)
 "aYK" = (
@@ -10847,7 +10847,7 @@
 /turf/open/floor/plating/airless,
 /area/centcom/ncvtitan)
 "wjm" = (
-/obj/machinery/vending/dorms,
+///obj/machinery/vending/dorms,
 /turf/open/floor/carpet/green,
 /area/centcom/interlink)
 "wko" = (
@@ -11082,7 +11082,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/interlink)
 "xqI" = (
-/obj/machinery/vending/dorms,
+///obj/machinery/vending/dorms,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
 "xrn" = (
@@ -11312,7 +11312,7 @@
 /turf/open/floor/plating,
 /area/centcom/ncvtitan)
 "yae" = (
-/obj/machinery/vending/dorms,
+///obj/machinery/vending/dorms,
 /turf/open/floor/carpet/orange,
 /area/centcom/interlink)
 "yao" = (
