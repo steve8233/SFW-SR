@@ -576,8 +576,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["loadout"], loadout)
 
-	READ_FILE(S["ooc_prefs"], ooc_prefs)
-	READ_FILE(S["erp_pref"], erp_pref)
+	//READ_FILE(S["ooc_prefs"], ooc_prefs)
+	//READ_FILE(S["erp_pref"], erp_pref)
 	READ_FILE(S["sextoys_pref"], sextoys_pref)
 	READ_FILE(S["noncon_pref"], noncon_pref)
 	READ_FILE(S["vore_pref"], vore_pref)
@@ -625,7 +625,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		loadout_points -= accumulated_cost //We got enough points, subtract the cost
 
-	ooc_prefs = sanitize_text(ooc_prefs)
+	/*ooc_prefs = sanitize_text(ooc_prefs)
 	if(!length(erp_pref))
 		erp_pref = "Ask"
 	if(!length(noncon_pref))
@@ -633,7 +633,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!length(vore_pref))
 		vore_pref = "Ask"
 	if(!length(sextoys_pref))
-		sextoys_pref = "No"
+		sextoys_pref = "No" */
 
 	general_record = sanitize_text(general_record)
 	security_record = sanitize_text(security_record)
@@ -770,7 +770,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["loadout"] , loadout)
 
-	WRITE_FILE(S["ooc_prefs"] , ooc_prefs)
+	//WRITE_FILE(S["ooc_prefs"] , ooc_prefs)
 	WRITE_FILE(S["erp_pref"] , erp_pref)
 	WRITE_FILE(S["sextoys_pref"], sextoys_pref)
 	WRITE_FILE(S["noncon_pref"] , noncon_pref)

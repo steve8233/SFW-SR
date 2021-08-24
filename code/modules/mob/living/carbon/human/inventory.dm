@@ -40,14 +40,14 @@
 			return s_store
 
 		//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-		if(ITEM_SLOT_VAGINA)
+		/*if(ITEM_SLOT_VAGINA)
 			return vagina
 		if(ITEM_SLOT_ANUS)
 			return anus
 		if(ITEM_SLOT_NIPPLES)
 			return nipples
 		if(ITEM_SLOT_PENIS)
-			return penis
+			return penis */
 		//SKYRAT EDIT ADDITION END
 
 	return null
@@ -132,10 +132,10 @@
 				return
 			gloves = I
 			//SKYRAT EDIT ADDITION - ERP UPDATE
-			if(gloves.breakouttime)
+			/*if(gloves.breakouttime)
 				ADD_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
 				stop_pulling()
-				update_action_buttons_icon()
+				update_action_buttons_icon() */
 			//SKYRAT EDIT ADDITION END
 			update_inv_gloves()
 		if(ITEM_SLOT_FEET)
@@ -152,11 +152,11 @@
 			if(I.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform()
 			//SKYRAT EDIT ADDITION - ERP UPDATE
-			if(I.flags_inv & HIDESEXTOY)
+			/*if(I.flags_inv & HIDESEXTOY)
 				update_inv_anus()
 				update_inv_vagina()
 				update_inv_penis()
-				update_inv_nipples()
+				update_inv_nipples()*/
 			//SKYRAT EDIT ADDITION END
 			if(wear_suit.breakouttime) //when equipping a straightjacket
 				ADD_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
@@ -182,7 +182,7 @@
 			update_inv_s_store()
 
 		//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-		if(ITEM_SLOT_VAGINA)
+		/*if(ITEM_SLOT_VAGINA)
 			if(src.is_bottomless())
 				if(vagina)
 					return
@@ -217,7 +217,7 @@
 				update_inv_penis()
 			else
 				to_chat(usr, "[src] is not bottomless, you cannot access to penis")
-
+*/
 		//SKYRAT EDIT ADDITION END
 
 		else
@@ -257,11 +257,11 @@
 		if(!QDELETED(src)) //no need to update we're getting deleted anyway
 			if(I.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform()
-			if(I.flags_inv & HIDESEXTOY)
+			/*if(I.flags_inv & HIDESEXTOY)
 				update_inv_anus()
 				update_inv_vagina()
 				update_inv_penis()
-				update_inv_nipples()
+				update_inv_nipples()*/
 			update_inv_wear_suit()
 	else if(I == w_uniform)
 		if(invdrop)
@@ -332,7 +332,7 @@
 			update_inv_s_store()
 
 	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-	else if(I == vagina)
+	/*else if(I == vagina)
 		vagina = null
 		if(!QDELETED(src))
 			update_inv_vagina()
@@ -347,7 +347,7 @@
 	else if(I == penis)
 		penis = null
 		if(!QDELETED(src))
-			update_inv_penis()
+			update_inv_penis() */
 	//SKYRAT EDIT ADDITION END
 
 	update_equipment_speed_mods()

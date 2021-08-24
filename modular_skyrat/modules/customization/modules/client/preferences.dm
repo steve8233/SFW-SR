@@ -216,11 +216,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	var/preview_pref = PREVIEW_PREF_JOB
 
-	var/ooc_prefs = ""
-	var/erp_pref = "Ask"
-	var/noncon_pref = "Ask"
-	var/vore_pref = "Ask"
-	var/sextoys_pref = "No"
+	//var/ooc_prefs = ""
+	//var/erp_pref = "Ask"
+	//var/noncon_pref = "Ask"
+	//var/vore_pref = "Ask"
+	//var/sextoys_pref = "No"
 
 	//BACKGROUND STUFF
 	var/general_record = ""
@@ -323,7 +323,7 @@ GLOBAL_LIST_INIT(food, list(
 
 	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Settings</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
+	//dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Custom Keybindings</a>"
 
 	if(!path)
@@ -513,19 +513,19 @@ GLOBAL_LIST_INIT(food, list(
 					else
 						dat += "[copytext(html_encode(features["silicon_flavor_text"]), 1, 40)]..."
 
-					dat +=	"<h2>OOC Preferences</h2>"
-					dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
-					dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
-					dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
-					dat += 	"<b>Sex toys usage:</b><a href='?_src_=prefs;preference=sextoys_pref;task=input'>[sextoys_pref]</a><br>"
-					dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
+					//dat +=	"<h2>OOC Preferences</h2>"
+					//dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
+					//dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
+					//dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
+					//dat += 	"<b>Sex toys usage:</b><a href='?_src_=prefs;preference=sextoys_pref;task=input'>[sextoys_pref]</a><br>"
+					/*dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
 					if(length(ooc_prefs) <= 40)
 						if(!length(ooc_prefs))
 							dat += "\[...\]"
 						else
 							dat += "[html_encode(ooc_prefs)]"
 					else
-						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
+						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..." */
 					dat += "<br>"
 
 					//dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
@@ -1203,17 +1203,17 @@ GLOBAL_LIST_INIT(food, list(
 			dat += "<br>"
 
 			//aphrodisiac pref
-			dat += "<b>Be Affected by Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphrodisiacs_pref'>[(skyrat_toggles & APHRO_PREF) ? "Enabled":"Disabled"]</a><br>"
+			//dat += "<b>Be Affected by Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphrodisiacs_pref'>[(skyrat_toggles & APHRO_PREF) ? "Enabled":"Disabled"]</a><br>"
 			//cumface pref
-			dat += "<b>Be Able To Get Covered In \"Reproductive Reagent\":</b> <a href='?_src_=prefs;preference=cumfaced_pref'>[(skyrat_toggles & CUMFACE_PREF) ? "Enabled":"Disabled"]</a><br>"
+			//dat += "<b>Be Able To Get Covered In \"Reproductive Reagent\":</b> <a href='?_src_=prefs;preference=cumfaced_pref'>[(skyrat_toggles & CUMFACE_PREF) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 			//erp update prefs here
-			dat += "<b>Be able to become bimboficated:</b> <a href='?_src_=prefs;preference=bimbo_pref'>[(skyrat_toggles & BIMBO_PREF) ? "Enabled":"Disabled"]</a><br>"
+			/*dat += "<b>Be able to become bimboficated:</b> <a href='?_src_=prefs;preference=bimbo_pref'>[(skyrat_toggles & BIMBO_PREF) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Be affected by breast enlargement chemicals:</b> <a href='?_src_=prefs;preference=b_enlargement_pref'>[(skyrat_toggles & BREAST_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Be affected by penis enlargement chemicals:</b> <a href='?_src_=prefs;preference=p_enlargement_pref'>[(skyrat_toggles & PENIS_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Forced masculinity:</b> <a href='?_src_=prefs;preference=forced_m_pref'>[(skyrat_toggles & FORCED_MALE) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Forced femininity:</b> <a href='?_src_=prefs;preference=forced_fem_pref'>[(skyrat_toggles & FORCED_FEM) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Forced femininity:</b> <a href='?_src_=prefs;preference=forced_fem_pref'>[(skyrat_toggles & FORCED_FEM) ? "Enabled":"Disabled"]</a><br>" */
 			dat += "<br>"
 
 			if(user.client)
@@ -2161,10 +2161,10 @@ GLOBAL_LIST_INIT(food, list(
 					if(!isnull(msg))
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 
-				if("ooc_prefs")
+				/*if("ooc_prefs")
 					var/msg = input(usr, "Set your OOC preferences.", "OOC Prefs", ooc_prefs) as message|null
 					if(!isnull(msg))
-						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
+						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) */
 
 				if("general_record")
 					var/msg = input(usr, "Set your general record. This is more or less public information, available from security, medical and command consoles", "General Record", general_record) as message|null
@@ -2195,7 +2195,7 @@ GLOBAL_LIST_INIT(food, list(
 					needs_update = TRUE
 					features["uses_skintones"] = !features["uses_skintones"]
 
-				if("erp_pref")
+				/*if("erp_pref")
 					switch(erp_pref)
 						if("Yes")
 							erp_pref = "Ask"
@@ -2218,9 +2218,9 @@ GLOBAL_LIST_INIT(food, list(
 						if("Ask")
 							vore_pref = "No"
 						if("No")
-							vore_pref = "Yes"
+							vore_pref = "Yes" */
 				//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-				if("sextoys_pref")
+				/*if("sextoys_pref")
 					// User changed state of ERP pref
 					var/mob/living/carbon/human/M = user
 					switch(sextoys_pref)
@@ -2254,7 +2254,7 @@ GLOBAL_LIST_INIT(food, list(
 									if(istype(E, /atom/movable/screen/human/ERP_toggle))
 										E.invisibility = 100
 								user.hud_used.hidden_inventory_update(user)
-								user.hud_used.persistent_inventory_update(user)
+								user.hud_used.persistent_inventory_update(user) */
 				//SKYRAT EDIT ADDITION END
 
 				if("change_arousal_preview")

@@ -22,7 +22,7 @@
 		usr.client.screen += targetmob.hud_used.toggleable_inventory
 
 	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-	if(usr.hud_used.inventory_shown && targetmob.hud_used)
+	/*if(usr.hud_used.inventory_shown && targetmob.hud_used)
 		for (var/atom/movable/screen/human/using in targetmob.hud_used.static_inventory)
 			if(using.screen_loc == ui_erp_inventory)
 				using.screen_loc = ui_erp_inventory_up // Move up ERP inventory button
@@ -49,7 +49,7 @@
 			if(inv.screen_loc == ui_nipples)
 				inv.screen_loc = ui_nipples_down
 			if(inv.screen_loc == ui_penis)
-				inv.screen_loc = ui_penis_down
+				inv.screen_loc = ui_penis_down */
 	//SKYRAT EDIT ADDITION END
 
 	targetmob.hud_used.hidden_inventory_update(usr)
@@ -234,14 +234,14 @@
 	static_inventory += using
 
 	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-	using = new /atom/movable/screen/human/ERP_toggle()
+	/*using = new /atom/movable/screen/human/ERP_toggle()
 	using.icon = ui_style
 	using.screen_loc = ui_erp_inventory
 	using.hud = src
 	// When creating a character, we will check if the ERP is enabled on the client, if not, then the ERP button is immediately invisible
 	if(owner.client?.prefs.sextoys_pref != "Yes")
 		using.invisibility = 100
-	static_inventory += using
+	static_inventory += using */
 	//SKYRAT EDIT ADDITION END
 
 	using = new /atom/movable/screen/human/equip()
@@ -306,7 +306,7 @@
 	static_inventory += inv_box
 
 	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-	inv_box = new /atom/movable/screen/inventory()
+	/*inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "vagina"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "vagina"
@@ -340,7 +340,7 @@
 	inv_box.screen_loc = ui_penis_down
 	inv_box.slot_id = ITEM_SLOT_PENIS
 	inv_box.hud = src
-	ERP_toggleable_inventory += inv_box
+	ERP_toggleable_inventory += inv_box */
 	//SKYRAT EDIT ADDITION END
 
 	throw_icon = new /atom/movable/screen/throw_catch()
@@ -470,7 +470,7 @@
 		if(H.head) screenmob.client.screen -= H.head
 
 	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-	if(screenmob.hud_used.ERP_inventory_shown && screenmob.hud_used.hud_shown && H.client.prefs?.sextoys_pref == "Yes")
+	/*if(screenmob.hud_used.ERP_inventory_shown && screenmob.hud_used.hud_shown && H.client.prefs?.sextoys_pref == "Yes")
 		if(H.vagina)
 			// This shity code need for hanlde an moving UI stuff when default inventory expand/collapse
 			if(screenmob.hud_used.inventory_shown && screenmob.hud_used)
@@ -500,7 +500,7 @@
 		if(H.vagina) screenmob.client.screen -= H.vagina
 		if(H.anus) screenmob.client.screen -= H.anus
 		if(H.nipples) screenmob.client.screen -= H.nipples
-		if(H.penis) screenmob.client.screen -= H.penis
+		if(H.penis) screenmob.client.screen -= H.penis */
 	//SKYRAT EDIT ADDITION END
 
 
@@ -535,7 +535,7 @@
 				screenmob.client.screen += H.r_store
 
 			//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-			if(H.client.prefs?.sextoys_pref == "Yes")
+			/*if(H.client.prefs?.sextoys_pref == "Yes")
 				if(H.vagina)
 					H.vagina.screen_loc = ui_vagina
 					screenmob.client.screen += H.vagina
@@ -547,7 +547,7 @@
 					screenmob.client.screen += H.nipples
 				if(H.penis)
 					H.penis.screen_loc = ui_penis
-					screenmob.client.screen += H.penis
+					screenmob.client.screen += H.penis */
 			//SKYRAT EDIT ADDITION END
 
 		else
@@ -565,14 +565,14 @@
 				screenmob.client.screen -= H.r_store
 
 			//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-			if(H.vagina)
+			/*if(H.vagina)
 				screenmob.client.screen -= H.vagina
 			if(H.anus)
 				screenmob.client.screen -= H.anus
 			if(H.nipples)
 				screenmob.client.screen -= H.nipples
 			if(H.penis)
-				screenmob.client.screen -= H.penis
+				screenmob.client.screen -= H.penis */
 			//SKYRAT EDIT ADDITION END
 
 	if(hud_version != HUD_STYLE_NOHUD)

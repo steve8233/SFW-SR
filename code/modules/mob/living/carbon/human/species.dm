@@ -1229,7 +1229,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return FALSE
 
 		//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-		if(ITEM_SLOT_VAGINA)
+		/*if(ITEM_SLOT_VAGINA)
 			if(H.is_bottomless())
 				if(H.getorganslot(ORGAN_SLOT_VAGINA))
 					return equip_delay_self_check(I, H, bypass_equip_delay_self)
@@ -1248,7 +1248,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(H.getorganslot(ORGAN_SLOT_PENIS))
 					return equip_delay_self_check(I, H, bypass_equip_delay_self)
 				return FALSE
-			return FALSE
+			return FALSE */
 		//SKYRAT EDIT ADDITION END
 
 	return FALSE //Unsupported slot
