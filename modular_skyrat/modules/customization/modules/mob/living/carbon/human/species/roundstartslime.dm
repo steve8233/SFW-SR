@@ -182,7 +182,7 @@
 			if(!dna_alteration || dna_alteration == "Cancel")
 				return
 			switch(dna_alteration)
-				if("Breasts Size")
+				/*if("Breasts Size")
 					var/new_size = input(H, "Choose your character's breasts size:", "DNA Alteration") as null|anything in GLOB.preference_breast_sizes
 					if(new_size)
 						DNA.features["breasts_size"] = breasts_cup_to_size(new_size)
@@ -238,6 +238,6 @@
 					if(new_body_size)
 						new_body_size = clamp(new_body_size * 0.01, BODY_SIZE_MIN, BODY_SIZE_MAX)
 						DNA.features["body_size"] = new_body_size
-						DNA.update_body_size()
+						DNA.update_body_size()*/
 			H.mutant_renderkey = "" //Just in case
 			H.update_mutant_bodyparts()

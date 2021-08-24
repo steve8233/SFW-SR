@@ -675,13 +675,13 @@ GLOBAL_LIST_INIT(food, list(
 							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
 							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
 
-						dat += "<h3>Testicles</h3>"
+						/*dat += "<h3>Testicles</h3>"
 						var/balls_name = mutant_bodyparts["testicles"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("testicles")
 						if(balls_name != "None")
 							var/named_size = balls_size_to_description(features["balls_size"])
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["testicles"];preference=balls_size;task=change_genitals'>[named_size]</a>"
-
+*/
 						if(mutant_bodyparts["taur"])
 							var/datum/sprite_accessory/taur/TSP = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
 							if(TSP.factual && !(TSP.taur_mode & STYLE_TAUR_SNAKE))
@@ -700,7 +700,7 @@ GLOBAL_LIST_INIT(food, list(
 
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<BR>"
-						dat += "<h3>Breasts</h3>"
+						/*dat += "<h3>Breasts</h3>"
 						var/breasts_name = mutant_bodyparts["breasts"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("breasts")
 						if(breasts_name != "None")
@@ -708,7 +708,7 @@ GLOBAL_LIST_INIT(food, list(
 							var/named_lactation = (features["breasts_lactation"]) ? "Yes" : "No"
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_size;task=change_genitals'>[named_size]</a>"
 							dat += "<br><b>Can Lactate: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_lactation;task=change_genitals'>[named_lactation]</a>"
-						dat += "</td>"
+						dat += "</td>"*/
 
 					dat += "</tr></table>"
 				if(2) //Markings
@@ -1980,7 +1980,7 @@ GLOBAL_LIST_INIT(food, list(
 						body_markings[zone] -= changing_name
 						body_markings[zone].Insert(held_index, desired_marking)
 						body_markings[zone][desired_marking] = marking_content
-		if("change_genitals")
+		/*if("change_genitals")
 			needs_update = TRUE
 			switch(href_list["preference"])
 				if("breasts_size")
@@ -2011,7 +2011,7 @@ GLOBAL_LIST_INIT(food, list(
 				if("balls_size")
 					var/new_size = input(user, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)
-						features["balls_size"] = balls_description_to_size(new_size)
+						features["balls_size"] = balls_description_to_size(new_size)*/
 		if("change_bodypart")
 			needs_update = TRUE
 			switch(href_list["preference"])
@@ -3150,11 +3150,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	character.dna.update_body_size()
 
-	for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
+	/*for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
 		var/obj/item/organ/genital/gent = character.getorganslot(organ_key)
 		if(gent)
 			gent.aroused = arousal_preview
-			gent.update_sprite_suffix()
+			gent.update_sprite_suffix()*/
 
 	if(length(augments))
 		for(var/key in augments)
