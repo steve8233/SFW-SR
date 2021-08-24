@@ -323,7 +323,7 @@ GLOBAL_LIST_INIT(food, list(
 
 	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Settings</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
-	//dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Custom Keybindings</a>"
 
 	if(!path)
@@ -664,7 +664,7 @@ GLOBAL_LIST_INIT(food, list(
 						dat += "<br><b>Don The Ultimate Gamer Cloak?:</b><BR><a href ='?_src_=prefs;preference=playtime_reward_cloak'>[(playtime_reward_cloak) ? "Enabled" : "Disabled"]</a><BR></td>"
 
 
-					if(pref_species.can_have_genitals)
+					/*if(pref_species.can_have_genitals)
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<a href='?_src_=prefs;preference=change_arousal_preview;task=input'>Change arousal preview</a>"
 						dat += "<h3>Penis</h3>"
@@ -673,7 +673,7 @@ GLOBAL_LIST_INIT(food, list(
 						if(penis_name != "None")
 							dat += "<br><b>Length: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_size;task=change_genitals'>[features["penis_size"]]</a> inches."
 							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
-							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
+							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"*/
 
 						/*dat += "<h3>Testicles</h3>"
 						var/balls_name = mutant_bodyparts["testicles"][MUTANT_INDEX_NAME]
@@ -681,7 +681,7 @@ GLOBAL_LIST_INIT(food, list(
 						if(balls_name != "None")
 							var/named_size = balls_size_to_description(features["balls_size"])
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["testicles"];preference=balls_size;task=change_genitals'>[named_size]</a>"
-*/
+
 						if(mutant_bodyparts["taur"])
 							var/datum/sprite_accessory/taur/TSP = GLOB.sprite_accessories["taur"][mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
 							if(TSP.factual && !(TSP.taur_mode & STYLE_TAUR_SNAKE))
@@ -690,7 +690,7 @@ GLOBAL_LIST_INIT(food, list(
 						dat += "</td>"
 						dat += "</td>"
 
-						dat += APPEARANCE_CATEGORY_COLUMN
+					*dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<b>Uses skintones: </b> <a href='?_src_=prefs;preference=uses_skintones;task=input'>[(features["uses_skintones"]) ? "Yes" : "No"]</a>"
 						dat += "<h3>Vagina</h3>"
 						dat += print_bodypart_change_line("vagina")
@@ -700,7 +700,7 @@ GLOBAL_LIST_INIT(food, list(
 
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<BR>"
-						/*dat += "<h3>Breasts</h3>"
+						dat += "<h3>Breasts</h3>"
 						var/breasts_name = mutant_bodyparts["breasts"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("breasts")
 						if(breasts_name != "None")
@@ -2937,28 +2937,28 @@ GLOBAL_LIST_INIT(food, list(
 					toggles ^= MIDROUND_ANTAG
 
 				//aphro pref
-				if("aphrodisiacs_pref")
-					skyrat_toggles ^= APHRO_PREF
+				//if("aphrodisiacs_pref")
+				//	skyrat_toggles ^= APHRO_PREF
 
 				//cumface pref
-				if("cumfaced_pref")
-					skyrat_toggles ^= CUMFACE_PREF
+				//if("cumfaced_pref")
+				//	skyrat_toggles ^= CUMFACE_PREF
 
 				//erp update prefs coming riiight here
-				if("bimbo_pref")
-					skyrat_toggles ^= BIMBO_PREF
+				//if("bimbo_pref")
+				//	skyrat_toggles ^= BIMBO_PREF
 
-				if("b_enlargement_pref")
-					skyrat_toggles ^= BREAST_ENLARGEMENT
+				//if("b_enlargement_pref")
+				//	skyrat_toggles ^= BREAST_ENLARGEMENT
 
-				if("p_enlargement_pref")
-					skyrat_toggles ^= PENIS_ENLARGEMENT
+				//if("p_enlargement_pref")
+				//	skyrat_toggles ^= PENIS_ENLARGEMENT
 
-				if("forced_m_pref")
-					skyrat_toggles ^= FORCED_MALE
+				//if("forced_m_pref")
+				//	skyrat_toggles ^= FORCED_MALE
 
-				if("forced_fem_pref")
-					skyrat_toggles ^= FORCED_FEM
+				//if("forced_fem_pref")
+				//	skyrat_toggles ^= FORCED_FEM
 
 				if("parallaxup")
 					parallax = WRAP(parallax + 1, PARALLAX_INSANE, PARALLAX_DISABLE + 1)
