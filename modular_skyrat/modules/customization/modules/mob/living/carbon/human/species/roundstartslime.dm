@@ -181,8 +181,8 @@
 			var/dna_alteration = input(H, "Select what part of your DNA you'd like to alter", "DNA Alteration", "cancel") in list("Penis Size","Penis Girth", "Penis Sheath", "Penis Taur Mode", "Balls Size", "Breasts Size", "Breasts Lactation", "Body Size", "Cancel")
 			if(!dna_alteration || dna_alteration == "Cancel")
 				return
-			switch(dna_alteration)
-				/*if("Breasts Size")
+			/*switch(dna_alteration)
+				if("Breasts Size")
 					var/new_size = input(H, "Choose your character's breasts size:", "DNA Alteration") as null|anything in GLOB.preference_breast_sizes
 					if(new_size)
 						DNA.features["breasts_size"] = breasts_cup_to_size(new_size)
