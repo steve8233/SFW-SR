@@ -216,11 +216,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	var/preview_pref = PREVIEW_PREF_JOB
 
-	var/ooc_prefs = ""
-	var/erp_pref = "Ask"
-	var/noncon_pref = "Ask"
-	var/vore_pref = "Ask"
-	var/sextoys_pref = "No"
+	//var/ooc_prefs = ""
+	//var/erp_pref = "Ask"
+	//var/noncon_pref = "Ask"
+	//var/vore_pref = "Ask"
+	//var/sextoys_pref = "No"
 
 	//BACKGROUND STUFF
 	var/general_record = ""
@@ -240,7 +240,7 @@ GLOBAL_LIST_INIT(food, list(
 	///Whether the user wants to see body size being shown in the preview
 	var/show_body_size = FALSE
 	///The arousal state of the previewed character, can be toggled by the user
-	var/arousal_preview = AROUSAL_NONE
+	//var/arousal_preview = AROUSAL_NONE
 	///The current volume setting for announcements
 	var/announcement_volume = 60
 
@@ -513,7 +513,7 @@ GLOBAL_LIST_INIT(food, list(
 					else
 						dat += "[copytext(html_encode(features["silicon_flavor_text"]), 1, 40)]..."
 
-					dat +=	"<h2>OOC Preferences</h2>"
+					/*dat +=	"<h2>OOC Preferences</h2>"
 					dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
 					dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
 					dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
@@ -526,7 +526,7 @@ GLOBAL_LIST_INIT(food, list(
 							dat += "[html_encode(ooc_prefs)]"
 					else
 						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
-					dat += "<br>"
+					dat += "<br>"*/
 
 					//dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 					//dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
@@ -664,7 +664,7 @@ GLOBAL_LIST_INIT(food, list(
 						dat += "<br><b>Don The Ultimate Gamer Cloak?:</b><BR><a href ='?_src_=prefs;preference=playtime_reward_cloak'>[(playtime_reward_cloak) ? "Enabled" : "Disabled"]</a><BR></td>"
 
 
-					if(pref_species.can_have_genitals)
+					/*if(pref_species.can_have_genitals)
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<a href='?_src_=prefs;preference=change_arousal_preview;task=input'>Change arousal preview</a>"
 						dat += "<h3>Penis</h3>"
@@ -688,17 +688,17 @@ GLOBAL_LIST_INIT(food, list(
 								var/text_string = (features["penis_taur_mode"]) ? "Yes" : "No"
 								dat += "<br><b>Taur Mode: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_taur_mode;task=change_genitals'>[text_string]</a>"
 						dat += "</td>"
-						dat += "</td>"
+						dat += "</td>"*/
 
-						dat += APPEARANCE_CATEGORY_COLUMN
+						/*dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<b>Uses skintones: </b> <a href='?_src_=prefs;preference=uses_skintones;task=input'>[(features["uses_skintones"]) ? "Yes" : "No"]</a>"
 						dat += "<h3>Vagina</h3>"
 						dat += print_bodypart_change_line("vagina")
 						dat += "<h3>Womb</h3>"
 						dat += print_bodypart_change_line("womb")
-						dat += "</td>"
+						dat += "</td>"*/
 
-						dat += APPEARANCE_CATEGORY_COLUMN
+						/*dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<BR>"
 						dat += "<h3>Breasts</h3>"
 						var/breasts_name = mutant_bodyparts["breasts"][MUTANT_INDEX_NAME]
@@ -708,7 +708,7 @@ GLOBAL_LIST_INIT(food, list(
 							var/named_lactation = (features["breasts_lactation"]) ? "Yes" : "No"
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_size;task=change_genitals'>[named_size]</a>"
 							dat += "<br><b>Can Lactate: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_lactation;task=change_genitals'>[named_lactation]</a>"
-						dat += "</td>"
+						dat += "</td>"*/
 
 					dat += "</tr></table>"
 				if(2) //Markings
@@ -1980,7 +1980,7 @@ GLOBAL_LIST_INIT(food, list(
 						body_markings[zone] -= changing_name
 						body_markings[zone].Insert(held_index, desired_marking)
 						body_markings[zone][desired_marking] = marking_content
-		if("change_genitals")
+		/*if("change_genitals")
 			needs_update = TRUE
 			switch(href_list["preference"])
 				if("breasts_size")
@@ -2011,7 +2011,7 @@ GLOBAL_LIST_INIT(food, list(
 				if("balls_size")
 					var/new_size = input(user, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)
-						features["balls_size"] = balls_description_to_size(new_size)
+						features["balls_size"] = balls_description_to_size(new_size)*/
 		if("change_bodypart")
 			needs_update = TRUE
 			switch(href_list["preference"])
@@ -2161,10 +2161,10 @@ GLOBAL_LIST_INIT(food, list(
 					if(!isnull(msg))
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 
-				if("ooc_prefs")
+				/*if("ooc_prefs")
 					var/msg = input(usr, "Set your OOC preferences.", "OOC Prefs", ooc_prefs) as message|null
 					if(!isnull(msg))
-						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
+						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)*/
 
 				if("general_record")
 					var/msg = input(usr, "Set your general record. This is more or less public information, available from security, medical and command consoles", "General Record", general_record) as message|null
@@ -2195,7 +2195,7 @@ GLOBAL_LIST_INIT(food, list(
 					needs_update = TRUE
 					features["uses_skintones"] = !features["uses_skintones"]
 
-				if("erp_pref")
+				/*if("erp_pref")
 					switch(erp_pref)
 						if("Yes")
 							erp_pref = "Ask"
@@ -2218,9 +2218,9 @@ GLOBAL_LIST_INIT(food, list(
 						if("Ask")
 							vore_pref = "No"
 						if("No")
-							vore_pref = "Yes"
+							vore_pref = "Yes"*/
 				//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-				if("sextoys_pref")
+				/*if("sextoys_pref")
 					// User changed state of ERP pref
 					var/mob/living/carbon/human/M = user
 					switch(sextoys_pref)
@@ -2254,10 +2254,10 @@ GLOBAL_LIST_INIT(food, list(
 									if(istype(E, /atom/movable/screen/human/ERP_toggle))
 										E.invisibility = 100
 								user.hud_used.hidden_inventory_update(user)
-								user.hud_used.persistent_inventory_update(user)
+								user.hud_used.persistent_inventory_update(user)*/
 				//SKYRAT EDIT ADDITION END
 
-				if("change_arousal_preview")
+				/*if("change_arousal_preview")
 					var/list/gen_arous_trans = list("Not aroused" = AROUSAL_NONE,
 						"Partly aroused" = AROUSAL_PARTIAL,
 						"Very aroused" = AROUSAL_FULL
@@ -2265,7 +2265,7 @@ GLOBAL_LIST_INIT(food, list(
 					var/new_arousal = input(user, "Choose your character's arousal:", "Character Preference")  as null|anything in gen_arous_trans
 					if(new_arousal)
 						arousal_preview = gen_arous_trans[new_arousal]
-						needs_update = TRUE
+						needs_update = TRUE*/
 
 				if("hair")
 					needs_update = TRUE
@@ -3150,11 +3150,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	character.dna.update_body_size()
 
-	for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
+	/*for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
 		var/obj/item/organ/genital/gent = character.getorganslot(organ_key)
 		if(gent)
 			gent.aroused = arousal_preview
-			gent.update_sprite_suffix()
+			gent.update_sprite_suffix()*/
 
 	if(length(augments))
 		for(var/key in augments)

@@ -39,7 +39,7 @@
 		if(ITEM_SLOT_SUITSTORE)
 			return s_store
 
-		//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
+		/*//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
 		if(ITEM_SLOT_VAGINA)
 			return vagina
 		if(ITEM_SLOT_ANUS)
@@ -47,7 +47,7 @@
 		if(ITEM_SLOT_NIPPLES)
 			return nipples
 		if(ITEM_SLOT_PENIS)
-			return penis
+			return penis*/
 		//SKYRAT EDIT ADDITION END
 
 	return null
@@ -151,12 +151,12 @@
 
 			if(I.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform()
-			//SKYRAT EDIT ADDITION - ERP UPDATE
+			/*//SKYRAT EDIT ADDITION - ERP UPDATE
 			if(I.flags_inv & HIDESEXTOY)
 				update_inv_anus()
 				update_inv_vagina()
 				update_inv_penis()
-				update_inv_nipples()
+				update_inv_nipples()*/
 			//SKYRAT EDIT ADDITION END
 			if(wear_suit.breakouttime) //when equipping a straightjacket
 				ADD_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
@@ -182,7 +182,7 @@
 			update_inv_s_store()
 
 		//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-		if(ITEM_SLOT_PENIS)
+		/*if(ITEM_SLOT_PENIS)
 			if(src.is_bottomless())
 				if(penis)
 					return
@@ -217,7 +217,7 @@
 				update_inv_nipples()
 			else
 				to_chat(usr, "[src] is not topless, you cannot access [usr == src ? "your" : src.p_their()] nipples!")
-
+*/
 		//SKYRAT EDIT ADDITION END
 
 		else
@@ -257,11 +257,11 @@
 		if(!QDELETED(src)) //no need to update we're getting deleted anyway
 			if(I.flags_inv & HIDEJUMPSUIT)
 				update_inv_w_uniform()
-			if(I.flags_inv & HIDESEXTOY)
+			/*if(I.flags_inv & HIDESEXTOY)
 				update_inv_anus()
 				update_inv_vagina()
 				update_inv_penis()
-				update_inv_nipples()
+				update_inv_nipples()*/
 			update_inv_wear_suit()
 	else if(I == w_uniform)
 		if(invdrop)
@@ -331,7 +331,7 @@
 		if(!QDELETED(src))
 			update_inv_s_store()
 
-	//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
+	/*//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
 	else if(I == vagina)
 		vagina = null
 		if(!QDELETED(src))
@@ -347,7 +347,7 @@
 	else if(I == penis)
 		penis = null
 		if(!QDELETED(src))
-			update_inv_penis()
+			update_inv_penis()*/
 	//SKYRAT EDIT ADDITION END
 
 	update_equipment_speed_mods()
