@@ -83,8 +83,8 @@ GLOBAL_LIST_INIT(food, list(
 	var/pda_color = "#808000"
 
 	//aphrodisiac preference
-	//var/aphrodisiacs_pref = 1
-	//var/cumfaced_pref = 0
+	var/aphrodisiacs_pref = 1
+	var/cumfaced_pref = 0
 
 	var/uses_glasses_colour = 0
 
@@ -216,11 +216,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	var/preview_pref = PREVIEW_PREF_JOB
 
-	//var/ooc_prefs = ""
-	//var/erp_pref = "Ask"
-	//var/noncon_pref = "Ask"
-	//var/vore_pref = "Ask"
-	//var/sextoys_pref = "No"
+	var/ooc_prefs = ""
+	var/erp_pref = "Ask"
+	var/noncon_pref = "Ask"
+	var/vore_pref = "Ask"
+	var/sextoys_pref = "No"
 
 	//BACKGROUND STUFF
 	var/general_record = ""
@@ -240,7 +240,7 @@ GLOBAL_LIST_INIT(food, list(
 	///Whether the user wants to see body size being shown in the preview
 	var/show_body_size = FALSE
 	///The arousal state of the previewed character, can be toggled by the user
-	//var/arousal_preview = AROUSAL_NONE
+	var/arousal_preview = AROUSAL_NONE
 	///The current volume setting for announcements
 	var/announcement_volume = 60
 
@@ -286,9 +286,9 @@ GLOBAL_LIST_INIT(food, list(
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
 #define MAX_MUTANT_ROWS 4
-//#define FLAVORTEXT_JOIN_MINIMUM 0
+#define FLAVORTEXT_JOIN_MINIMUM 150
 
-/*/datum/preferences/proc/check_flavor_text(inform_client = TRUE)
+/datum/preferences/proc/check_flavor_text(inform_client = TRUE)
 	if(!features["flavor_text"])
 		if(check_rights(R_ADMIN, FALSE))
 			var/resp = tgui_input_list(usr, "Do you want to bypass the flavor text requirement?", "Confirmation", list("Yes", "No"), 1 MINUTES)
@@ -307,7 +307,7 @@ GLOBAL_LIST_INIT(food, list(
 		if(inform_client)
 			to_chat(parent, "<span class='userdanger'>Your flavor text must be longer than [FLAVORTEXT_JOIN_MINIMUM] characters!</span>")
 		return FALSE
-	return TRUE*/
+	return TRUE
 
 /datum/preferences/proc/ShowChoices(mob/user)
 	if(!user || !user.client)
@@ -513,19 +513,19 @@ GLOBAL_LIST_INIT(food, list(
 					else
 						dat += "[copytext(html_encode(features["silicon_flavor_text"]), 1, 40)]..."
 
-					//dat +=	"<h2>OOC Preferences</h2>"
-					//dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
-					//dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
-					//dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
-					//dat += 	"<b>Sex toys usage:</b><a href='?_src_=prefs;preference=sextoys_pref;task=input'>[sextoys_pref]</a><br>"
-					/*dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
+					dat +=	"<h2>OOC Preferences</h2>"
+					dat += 	"<b>ERP:</b><a href='?_src_=prefs;preference=erp_pref;task=input'>[erp_pref]</a> "
+					dat += 	"<b>Non-Con:</b><a href='?_src_=prefs;preference=noncon_pref;task=input'>[noncon_pref]</a> "
+					dat += 	"<b>Vore:</b><a href='?_src_=prefs;preference=vore_pref;task=input'>[vore_pref]</a><br>"
+					dat += 	"<b>Sex toys usage:</b><a href='?_src_=prefs;preference=sextoys_pref;task=input'>[sextoys_pref]</a><br>"
+					dat += "<a href='?_src_=prefs;preference=ooc_prefs;task=input'><b>Set OOC prefs</b></a><br>"
 					if(length(ooc_prefs) <= 40)
 						if(!length(ooc_prefs))
 							dat += "\[...\]"
 						else
 							dat += "[html_encode(ooc_prefs)]"
 					else
-						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..." */
+						dat += "[copytext(html_encode(ooc_prefs), 1, 40)]..."
 					dat += "<br>"
 
 					//dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
@@ -664,7 +664,7 @@ GLOBAL_LIST_INIT(food, list(
 						dat += "<br><b>Don The Ultimate Gamer Cloak?:</b><BR><a href ='?_src_=prefs;preference=playtime_reward_cloak'>[(playtime_reward_cloak) ? "Enabled" : "Disabled"]</a><BR></td>"
 
 
-					/*if(pref_species.can_have_genitals)
+					if(pref_species.can_have_genitals)
 						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<a href='?_src_=prefs;preference=change_arousal_preview;task=input'>Change arousal preview</a>"
 						dat += "<h3>Penis</h3>"
@@ -673,9 +673,9 @@ GLOBAL_LIST_INIT(food, list(
 						if(penis_name != "None")
 							dat += "<br><b>Length: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_size;task=change_genitals'>[features["penis_size"]]</a> inches."
 							dat += "<br><b>Girth: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_girth;task=change_genitals'>[features["penis_girth"]]</a> inches circumference"
-							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"*/
+							dat += "<br><b>Sheath: </b> <a href='?_src_=prefs;key=["penis"];preference=penis_sheath;task=change_genitals'>[features["penis_sheath"]]</a>"
 
-						/*dat += "<h3>Testicles</h3>"
+						dat += "<h3>Testicles</h3>"
 						var/balls_name = mutant_bodyparts["testicles"][MUTANT_INDEX_NAME]
 						dat += print_bodypart_change_line("testicles")
 						if(balls_name != "None")
@@ -690,7 +690,7 @@ GLOBAL_LIST_INIT(food, list(
 						dat += "</td>"
 						dat += "</td>"
 
-					*dat += APPEARANCE_CATEGORY_COLUMN
+						dat += APPEARANCE_CATEGORY_COLUMN
 						dat += "<b>Uses skintones: </b> <a href='?_src_=prefs;preference=uses_skintones;task=input'>[(features["uses_skintones"]) ? "Yes" : "No"]</a>"
 						dat += "<h3>Vagina</h3>"
 						dat += print_bodypart_change_line("vagina")
@@ -708,7 +708,7 @@ GLOBAL_LIST_INIT(food, list(
 							var/named_lactation = (features["breasts_lactation"]) ? "Yes" : "No"
 							dat += "<br><b>Size: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_size;task=change_genitals'>[named_size]</a>"
 							dat += "<br><b>Can Lactate: </b> <a href='?_src_=prefs;key=["breasts"];preference=breasts_lactation;task=change_genitals'>[named_lactation]</a>"
-						dat += "</td>"*/
+						dat += "</td>"
 
 					dat += "</tr></table>"
 				if(2) //Markings
@@ -1203,17 +1203,17 @@ GLOBAL_LIST_INIT(food, list(
 			dat += "<br>"
 
 			//aphrodisiac pref
-			//dat += "<b>Be Affected by Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphrodisiacs_pref'>[(skyrat_toggles & APHRO_PREF) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Be Affected by Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphrodisiacs_pref'>[(skyrat_toggles & APHRO_PREF) ? "Enabled":"Disabled"]</a><br>"
 			//cumface pref
-			//dat += "<b>Be Able To Get Covered In \"Reproductive Reagent\":</b> <a href='?_src_=prefs;preference=cumfaced_pref'>[(skyrat_toggles & CUMFACE_PREF) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Be Able To Get Covered In \"Reproductive Reagent\":</b> <a href='?_src_=prefs;preference=cumfaced_pref'>[(skyrat_toggles & CUMFACE_PREF) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 			//erp update prefs here
-			/*dat += "<b>Be able to become bimboficated:</b> <a href='?_src_=prefs;preference=bimbo_pref'>[(skyrat_toggles & BIMBO_PREF) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Be affected by breast enlargement chemicals:</b> <a href='?_src_=prefs;preference=b_enlargement_pref'>[(skyrat_toggles & BREAST_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Be affected by penis enlargement chemicals:</b> <a href='?_src_=prefs;preference=p_enlargement_pref'>[(skyrat_toggles & PENIS_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo_pref'>[(skyrat_toggles & BIMBO_PREF) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Breast enlargement chemicals:</b> <a href='?_src_=prefs;preference=b_enlargement_pref'>[(skyrat_toggles & BREAST_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Penis enlargement chemicals:</b> <a href='?_src_=prefs;preference=p_enlargement_pref'>[(skyrat_toggles & PENIS_ENLARGEMENT) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Forced masculinity:</b> <a href='?_src_=prefs;preference=forced_m_pref'>[(skyrat_toggles & FORCED_MALE) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Forced femininity:</b> <a href='?_src_=prefs;preference=forced_fem_pref'>[(skyrat_toggles & FORCED_FEM) ? "Enabled":"Disabled"]</a><br>" */
+			dat += "<b>Forced femininity:</b> <a href='?_src_=prefs;preference=forced_fem_pref'>[(skyrat_toggles & FORCED_FEM) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 
 			if(user.client)
@@ -1980,7 +1980,7 @@ GLOBAL_LIST_INIT(food, list(
 						body_markings[zone] -= changing_name
 						body_markings[zone].Insert(held_index, desired_marking)
 						body_markings[zone][desired_marking] = marking_content
-		/*if("change_genitals")
+		if("change_genitals")
 			needs_update = TRUE
 			switch(href_list["preference"])
 				if("breasts_size")
@@ -2011,7 +2011,7 @@ GLOBAL_LIST_INIT(food, list(
 				if("balls_size")
 					var/new_size = input(user, "Choose your character's balls size:", "Character Preference") as null|anything in GLOB.preference_balls_sizes
 					if(new_size)
-						features["balls_size"] = balls_description_to_size(new_size)*/
+						features["balls_size"] = balls_description_to_size(new_size)
 		if("change_bodypart")
 			needs_update = TRUE
 			switch(href_list["preference"])
@@ -2161,10 +2161,10 @@ GLOBAL_LIST_INIT(food, list(
 					if(!isnull(msg))
 						features["silicon_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 
-				/*if("ooc_prefs")
+				if("ooc_prefs")
 					var/msg = input(usr, "Set your OOC preferences.", "OOC Prefs", ooc_prefs) as message|null
 					if(!isnull(msg))
-						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE) */
+						ooc_prefs = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
 
 				if("general_record")
 					var/msg = input(usr, "Set your general record. This is more or less public information, available from security, medical and command consoles", "General Record", general_record) as message|null
@@ -2195,7 +2195,7 @@ GLOBAL_LIST_INIT(food, list(
 					needs_update = TRUE
 					features["uses_skintones"] = !features["uses_skintones"]
 
-				/*if("erp_pref")
+				if("erp_pref")
 					switch(erp_pref)
 						if("Yes")
 							erp_pref = "Ask"
@@ -2218,9 +2218,9 @@ GLOBAL_LIST_INIT(food, list(
 						if("Ask")
 							vore_pref = "No"
 						if("No")
-							vore_pref = "Yes" */
+							vore_pref = "Yes"
 				//SKYRAT EDIT ADDITION BEGIN - ERP_SLOT_SYSTEM
-				/*if("sextoys_pref")
+				if("sextoys_pref")
 					// User changed state of ERP pref
 					var/mob/living/carbon/human/M = user
 					switch(sextoys_pref)
@@ -2254,10 +2254,10 @@ GLOBAL_LIST_INIT(food, list(
 									if(istype(E, /atom/movable/screen/human/ERP_toggle))
 										E.invisibility = 100
 								user.hud_used.hidden_inventory_update(user)
-								user.hud_used.persistent_inventory_update(user) */
+								user.hud_used.persistent_inventory_update(user)
 				//SKYRAT EDIT ADDITION END
 
-				/*if("change_arousal_preview")
+				if("change_arousal_preview")
 					var/list/gen_arous_trans = list("Not aroused" = AROUSAL_NONE,
 						"Partly aroused" = AROUSAL_PARTIAL,
 						"Very aroused" = AROUSAL_FULL
@@ -2265,7 +2265,7 @@ GLOBAL_LIST_INIT(food, list(
 					var/new_arousal = input(user, "Choose your character's arousal:", "Character Preference")  as null|anything in gen_arous_trans
 					if(new_arousal)
 						arousal_preview = gen_arous_trans[new_arousal]
-						needs_update = TRUE*/
+						needs_update = TRUE
 
 				if("hair")
 					needs_update = TRUE
@@ -2937,28 +2937,28 @@ GLOBAL_LIST_INIT(food, list(
 					toggles ^= MIDROUND_ANTAG
 
 				//aphro pref
-				//if("aphrodisiacs_pref")
-				//	skyrat_toggles ^= APHRO_PREF
+				if("aphrodisiacs_pref")
+					skyrat_toggles ^= APHRO_PREF
 
 				//cumface pref
-				//if("cumfaced_pref")
-				//	skyrat_toggles ^= CUMFACE_PREF
+				if("cumfaced_pref")
+					skyrat_toggles ^= CUMFACE_PREF
 
 				//erp update prefs coming riiight here
-				//if("bimbo_pref")
-				//	skyrat_toggles ^= BIMBO_PREF
+				if("bimbo_pref")
+					skyrat_toggles ^= BIMBO_PREF
 
-				//if("b_enlargement_pref")
-				//	skyrat_toggles ^= BREAST_ENLARGEMENT
+				if("b_enlargement_pref")
+					skyrat_toggles ^= BREAST_ENLARGEMENT
 
-				//if("p_enlargement_pref")
-				//	skyrat_toggles ^= PENIS_ENLARGEMENT
+				if("p_enlargement_pref")
+					skyrat_toggles ^= PENIS_ENLARGEMENT
 
-				//if("forced_m_pref")
-				//	skyrat_toggles ^= FORCED_MALE
+				if("forced_m_pref")
+					skyrat_toggles ^= FORCED_MALE
 
-				//if("forced_fem_pref")
-				//	skyrat_toggles ^= FORCED_FEM
+				if("forced_fem_pref")
+					skyrat_toggles ^= FORCED_FEM
 
 				if("parallaxup")
 					parallax = WRAP(parallax + 1, PARALLAX_INSANE, PARALLAX_DISABLE + 1)
@@ -3150,11 +3150,11 @@ GLOBAL_LIST_INIT(food, list(
 
 	character.dna.update_body_size()
 
-	/*for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
+	for(var/organ_key in list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS))
 		var/obj/item/organ/genital/gent = character.getorganslot(organ_key)
 		if(gent)
 			gent.aroused = arousal_preview
-			gent.update_sprite_suffix()*/
+			gent.update_sprite_suffix()
 
 	if(length(augments))
 		for(var/key in augments)
