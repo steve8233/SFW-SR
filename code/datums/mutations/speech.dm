@@ -264,3 +264,35 @@
 	var/spoken_message = speech_args[SPEECH_MESSAGE]
 	spoken_message = piglatin_sentence(spoken_message)
 	speech_args[SPEECH_MESSAGE] = spoken_message
+
+/datum/mutation/human/owo
+	name = "OwO Speech"
+	desc = "A horrible mutation that makes people talk in a strange way."
+	quality = MINOR_NEGATIVE
+	text_gain_indication = "<span class='notice'>Owh nowwh.....</span>"
+	text_lose_indication = "<span class='notice'>You finally can speak normally again.</span>"
+
+/datum/mutation/human/owo/on_acquiring(mob/living/carbon/human/owner)
+	if(..())
+		return
+	RegisterSignal(owner, COMSIG_MOB_SAY, .proc/handle_speech)
+
+/datum/mutation/human/owo/on_losing(mob/living/carbon/human/owner)
+	if(..())
+		return
+	UnregisterSignal(owner, COMSIG_MOB_SAY)
+
+/datum/mutation/human/owo/proc/handle_speech(datum/source, list/speech_args)
+	SIGNAL_HANDLER
+
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message[1] != "*")
+		message = replacetext(message, "ne", "nye")
+		message = replacetext(message, "nu", "nyu")
+		message = replacetext(message, "na", "nya")
+		message = replacetext(message, "no", "nyo")
+		message = replacetext(message, "ove", "uv")
+		message = replacetext(message, "l", "w")
+		message = replacetext(message, "r", "w")
+		speech_args[SPEECH_MESSAGE] = lowertext(message)
+		speech_args[SPEECH_MESSAGE] = trim(message)
